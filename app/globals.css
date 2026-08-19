@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f3efe8;
+  --foreground: #faecc3;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #f3efe8;
+    --foreground: #faecc3;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@keyframes scrollRight {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.animate-scroll-right {
+  animation: scrollRight 30s linear infinite;
+}
+
+/* Opcional: Pausar la animación si el usuario prefiere movimiento reducido en su sistema */
+@media (prefers-reduced-motion: reduce) {
+  .animate-scroll-right {
+    animation-play-state: paused;
+  }
+}
