@@ -87,6 +87,10 @@ export default function Home() {
       path: "/github.svg"
     },
     {
+      name: "Linux",
+      path: "/linux.svg"
+    },
+    {
       name: "JS/TS",
       path: "/typescript.svg"
     },
@@ -115,10 +119,6 @@ export default function Home() {
       path: "/bash.svg"
     },
     {
-      name: "C++",
-      path: "/c-plus-plus.svg"
-    },
-    {
       name: "PostgreSQL",
       path: "/postgresql.svg"
     },
@@ -131,8 +131,8 @@ export default function Home() {
       path: "/react.svg"
     },
     {
-      name: "Linux",
-      path: "/linux.svg"
+      name: "C++",
+      path: "/c-plus-plus.svg"
     },
     {
       name: "Android Studio",
