@@ -15,7 +15,7 @@ export default function Home() {
       year: "2026",
       title: "Trabajo Fin de Grado",
       description: "Sistema integral de gestión, explotación y alerta sobre enfermedades vectoriales",
-      tech: ["JavaScript", "Kotlin", "Tailwind", "SQL", "JaCoCo", "NextJS", "Spring Boot", "Procesos ETL", "AWS", "PostgreSQL", "Git", "Github"]
+      tech: ["JavaScript", "Kotlin", "Tailwind", "SQL", "JaCoCo", "NextJS", "Spring Boot", "Procesos ETL", "AWS", "PostgreSQL", "Git", "Github", "Docker"]
     },
     {
       year: "2022",
@@ -26,12 +26,14 @@ export default function Home() {
     {
       year: "2024",
       title: "Gestor de incidencias",
-      description: "Aplicación web para la gestión de incidencias IT"
+      description: "Aplicación web para la gestión de incidencias IT",
+      tech: ["React", ".NET", "SQL Server", "Nginx", "Ollama", "Docker"]
     },
     {
       year: "2024",
       title: "Narratives",
-      description: "Aplicación de audiolibros disponible tanto para ordenador como para Android"
+      description: "Aplicación de audiolibros disponible tanto para ordenador como para Android",
+      tech: ["React", "React Native", "Ionic", "Flutter", "Node.js", "PostgreSQL"]
     },
     {
       year: "2025",
@@ -49,7 +51,7 @@ export default function Home() {
       year: "2025",
       title: "Coachito",
       description: "Aplicación Android para el control de entrenamientos en el gimnasio",
-      tech: ["React", "TypeScript", "Expo", "Gluestack", "Jest", "Supabase", "Git", "Github"]
+      tech: ["React Native", "TypeScript", "Expo", "Gluestack", "Jest", "Supabase", "Git", "Github"]
     },
     {
       year: "2026",
@@ -85,10 +87,6 @@ export default function Home() {
       path: "/github.svg"
     },
     {
-      name: "Git",
-      path: "/git.svg"
-    },
-    {
       name: "JS/TS",
       path: "/typescript.svg"
     },
@@ -99,6 +97,10 @@ export default function Home() {
     {
       name: "Tailwind",
       path: "/tailwind.svg"
+    },
+    {
+      name: "Git",
+      path: "/git.svg"
     },
     {
       name: "Visual Studio Code",
@@ -254,13 +256,16 @@ export default function Home() {
 
 
                 {/* --- INICIO DE LA TARJETA 3D --- */}
-                {/* 1. Contenedor padre con perspectiva 3D y altura fija (h-56) para que no colapse */}
-                <div className="group relative w-full ml-12 md:ml-0 md:w-[45%] h-56 [perspective:1000px]">
+                {/* 1. Añadimos tabIndex={0} para hacerla "tocable", cursor-pointer para el ratón, y focus:outline-none para quitar el borde azul que ponen algunos navegadores */}
+                <div 
+                  tabIndex={0} 
+                  className="group relative w-full ml-12 md:ml-0 md:w-[45%] h-56 [perspective:1000px] cursor-pointer focus:outline-none"
+                >
                   
-                  {/* 2. El bloque que rota entero. group-hover lanza la rotación de 180deg */}
-                  <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] shadow-lg rounded-xl">
+                  {/* 2. Añadimos group-focus:[transform:rotateY(180deg)] justo al lado del group-hover */}
+                  <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] group-focus:[transform:rotateY(180deg)] shadow-lg rounded-xl">
 
-                    {/* 3. CARA FRONTAL */}
+                    {/* 3. CARA FRONTAL (Se queda igual) */}
                     <div className="absolute inset-0 w-full h-full backface-hidden p-6 border-2 border-foreground/10 rounded-xl bg-foreground flex flex-col justify-center">
                       <span className="inline-block px-3 py-1 mb-3 text-xs font-bold rounded-full bg-white text-[#336659] self-start">
                         {project.year}
@@ -269,11 +274,10 @@ export default function Home() {
                       <p className="text-sm opacity-80 text-[#0e1c4f] line-clamp-3">{project.description}</p>
                     </div>
 
-                    {/* 4. CARA TRASERA (girada 180deg por defecto) */}
+                    {/* 4. CARA TRASERA (Se queda igual) */}
                     <div className="absolute inset-0 w-full h-full backface-hidden [transform:rotateY(180deg)] p-6 border-2 border-[#336659] rounded-xl bg-[#336659] text-background flex flex-col items-center justify-center text-center">
                       <h4 className="font-bold mb-4 font-mono text-lg">Stack Tecnológico</h4>
                       <div className="flex flex-wrap gap-2 justify-center">
-                        {/* Pintamos las tecnologías como pequeñas píldoras */}
                         {project.tech?.map((t, i) => (
                           <span key={i} className="px-3 py-1 bg-background text-[#336659] rounded-full text-xs font-bold shadow">
                             {t}
