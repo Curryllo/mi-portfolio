@@ -80,12 +80,7 @@ export default function Home() {
     }
   ];
 
-
   const tecnologias = [
-    {
-      name: "GitHub",
-      path: "/github.svg"
-    },
     {
       name: "Linux",
       path: "/linux.svg"
@@ -152,9 +147,6 @@ export default function Home() {
               Ingeniero de Software
           </div>
         </div>
-          
-        
-
           {/* Este div es el que centra TODO el bloque en la pantalla */}
           <div className="w-full max-w-5xl">
             <h2 className="text-3xl font-bold mb-10 text-center font-mono text-[#336659]">
@@ -181,22 +173,17 @@ export default function Home() {
                     </span>
                   </div>
                 ))}
-                
               </div>
             </div>
           </div>
       </section>
-        
       <section className="py-20 w-full px-4 md:px-8">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold mb-20 text-center font-mono text-[#336659]">Experiencia</h2>
-          
           <div className="relative">
-            
             {/* La línea vertical (Centrada en Desktop, a la izquierda en Móvil) */}
             <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-white -translate-x-1/2 rounded"></div>
             <div className="md:hidden absolute left-4 top-0 bottom-0 w-1 bg-white rounded"></div>
-
             {/* Iteramos sobre los proyectos */}
             {experienca.map((exp, index) => (
               <div 
@@ -204,11 +191,9 @@ export default function Home() {
                 className={`relative flex items-center mb-12 w-full ${
                   index % 2 === 0 ? 'md:justify-start' : 'md:justify-end'
                 }`}
-              >
-                
+              > 
                 {/* El puntito en la línea de tiempo (Desktop) */}
                 <div className="hidden md:block absolute left-1/2 w-5 h-5 bg-[#bba591] rounded-full z-10 border-4 border-background -translate-x-1/2"></div>
-                
                 {/* El puntito en la línea de tiempo (Móvil) */}
                 <div className="md:hidden absolute left-4 w-5 h-5 bg-[#bba591] rounded-full z-10 border-4 border-background -translate-x-[8px]"></div>
 
@@ -223,7 +208,6 @@ export default function Home() {
 
               </div>
             ))}
-            
           </div>
         </div>
       </section>
@@ -232,13 +216,10 @@ export default function Home() {
       <section className="py-20 w-full px-4 md:px-8">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold mb-20 text-center font-mono text-[#336659]">Mis Proyectos</h2>
-          
           <div className="relative">
-            
             {/* La línea vertical (Centrada en Desktop, a la izquierda en Móvil) */}
             <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-white -translate-x-1/2 rounded"></div>
             <div className="md:hidden absolute left-4 top-0 bottom-0 w-1 bg-[#bba591] rounded"></div>
-
             {/* Iteramos sobre los proyectos */}
             {proyectos.sort((a, b) => Number(b.year) - Number(a.year)).map((project, index) => (
               <div 
@@ -247,24 +228,18 @@ export default function Home() {
                   index % 2 === 0 ? 'md:justify-start' : 'md:justify-end'
                 }`}
               >
-                
                 {/* El puntito en la línea de tiempo (Desktop) */}
                 <div className="hidden md:block absolute left-1/2 w-5 h-5 bg-[#bba591] rounded-full z-10 border-4 border-background -translate-x-1/2"></div>
-                
                 {/* El puntito en la línea de tiempo (Móvil) */}
                 <div className="md:hidden absolute left-4 w-5 h-5 bg-[#bba591] rounded-full z-10 border-4 border-background -translate-x-[8px]"></div>
-
-
                 {/* --- INICIO DE LA TARJETA 3D --- */}
                 {/* 1. Añadimos tabIndex={0} para hacerla "tocable", cursor-pointer para el ratón, y focus:outline-none para quitar el borde azul que ponen algunos navegadores */}
                 <div 
                   tabIndex={0} 
                   className="group relative w-full ml-12 md:ml-0 md:w-[45%] h-56 [perspective:1000px] cursor-pointer focus:outline-none"
                 >
-                  
                   {/* 2. Añadimos group-focus:[transform:rotateY(180deg)] justo al lado del group-hover */}
                   <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] group-focus:[transform:rotateY(180deg)] shadow-lg rounded-xl">
-
                     {/* 3. CARA FRONTAL (Se queda igual) */}
                     <div className="absolute inset-0 w-full h-full backface-hidden p-6 border-2 border-foreground/10 rounded-xl bg-foreground flex flex-col justify-center">
                       <span className="inline-block px-3 py-1 mb-3 text-xs font-bold rounded-full bg-white text-[#336659] self-start">
@@ -273,7 +248,6 @@ export default function Home() {
                       <h3 className="font-bold text-xl mb-2 text-[#0e1c4f]">{project.title}</h3>
                       <p className="text-sm opacity-80 text-[#0e1c4f] line-clamp-3">{project.description}</p>
                     </div>
-
                     {/* 4. CARA TRASERA (Se queda igual) */}
                     <div className="absolute inset-0 w-full h-full backface-hidden [transform:rotateY(180deg)] p-6 border-2 border-[#336659] rounded-xl bg-[#336659] text-background flex flex-col items-center justify-center text-center">
                       <h4 className="font-bold mb-4 font-mono text-lg">Stack Tecnológico</h4>
@@ -290,7 +264,6 @@ export default function Home() {
                 {/* --- FIN DE LA TARJETA 3D --- */}
               </div>
             ))}
-            
           </div>
         </div>
       </section>
@@ -300,10 +273,8 @@ export default function Home() {
           <h2 className="text-3xl font-bold mb-20 text-center font-mono text-[#336659]">
             Certificados
           </h2>
-          
           {/* Contenedor GRID: Gestiona las columnas automáticamente */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            
             {certificados.map((certificado, index) => (
               /* Eliminamos el div extra que tenías y ponemos el key directamente en la tarjeta */
               <div 
@@ -318,11 +289,9 @@ export default function Home() {
                 </h3>
               </div>
             ))}
-
           </div>
         </div>
       </section>
-      
     </div>
   );
 }
