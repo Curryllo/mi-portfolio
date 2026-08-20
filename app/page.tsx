@@ -1,6 +1,89 @@
-import ContactBar from "./componentes/page";
+'use client';
+import { User } from "lucide-react";
 import Image from "next/image";
+import { useState } from "react";
+
+export function ContactBar({ idioma }: { idioma: string }) {
+    const [sobreMi, setSobreMi] = useState(false);
+    return (
+        <div className="fixed top-6 right-4 md:right-8 z-50 flex flex-col items-end">
+            <nav 
+                className={`
+                    flex flex-col items-center bg-[#bba591] backdrop-blur-md border border-foreground/10 shadow-lg 
+                    transition-all duration-500 ease-in-out overflow-hidden
+                    ${sobreMi 
+                        ? 'w-[95vw] md:w-[600px] rounded-3xl p-6 gap-6' // Estado ABIERTO (más ancho, alto y menos redondeado)
+                        : 'w-[240px] rounded-full px-6 py-2 gap-0'          // Estado CERRADO (píldora ajustada a los iconos)
+                    }
+                `}
+            >
+                {/* 1. FILA SUPERIOR: Los iconos (siempre visibles) */}
+                <div className="flex items-center justify-center gap-6 text-sm font-semibold">
+                    <a href="https://www.linkedin.com/in/curro-valero-casajús-1a4941335" target="_blank" rel="noopener noreferrer">
+                        <Image
+                            priority 
+                            src={"/LinkedIn.svg"}
+                            height={32}
+                            width={30}
+                            alt="Logo de LinkedIn"
+                            className="hover:scale-110 transition-transform"
+                        />
+                    </a>
+                    
+                    <button 
+                        onClick={() => setSobreMi(!sobreMi)}
+                        className={`hover:scale-110 transition-transform p-2 rounded-full ${sobreMi ? 'bg-black/10' : ''}`}
+                    >
+                        <User className="text-black" />
+                    </button>
+                    
+                    <a href="https://github.com/Curryllo" target="_blank" rel="noopener noreferrer">
+                        <Image
+                            priority 
+                            src={"/github.svg"}
+                            height={32}
+                            width={30}
+                            alt="Logo de GitHub"
+                            className="hover:scale-110 transition-transform"
+                        />
+                    </a>
+                </div>
+
+                {/* 2. CONTENIDO DESPLEGABLE: El texto (solo visible si sobreMi es true) */}
+                <div 
+                    className={`
+                        transition-all duration-500 ease-in-out text-black font-mono text-center
+                        ${sobreMi ? 'opacity-100 max-h-[500px]' : 'opacity-0 max-h-0'}
+                    `}
+                >
+                    <p className="text-sm md:text-base leading-relaxed">
+                        {idioma === 'español' ? (
+                            <>
+                                Soy Curro Valero Casajús, graduado en <strong>Ingeniería Informática</strong> por la <strong>Universidad de Zaragoza</strong>.
+                                <br/><br/>
+                                Siempre me ha gustado la tecnología y la innovación, es por ello que elegí esta profesión la cual ofrece muchísimas posibilidades.
+                                <br/><br/>
+                                Si quieres contactar conmigo puedes hacerlo a través de mi correo: <strong>currovalero2003@gmail.com</strong> o podemos conectar por LinkedIn.
+                            </>
+                        ) : (
+                            <>
+                                I'm Curro Valero Casajús, a graduate in <strong>Software Engineering</strong> from the <strong>University of Zaragoza</strong>.
+                                <br/><br/>
+                                I have always been passionate about technology and innovation, which is why I chose this profession that offers so many possibilities.
+                                <br/><br/>
+                                If you want to contact me, you can do so through my email: <strong>currovalero2003@gmail.com</strong> or we can connect via LinkedIn.
+                            </>
+                        )}
+                    </p>
+                </div>
+
+            </nav>
+        </div>
+    );
+}
+
 export default function Home() {
+  const [idioma, setIdioma] = useState('español');
 
   const experienca = [
     {
@@ -9,6 +92,14 @@ export default function Home() {
       description: "Full Stack en el proyecto de Historial Médico en el SALUD de Aragón, España"
     }
   ]
+
+  const experiencaEnglish = [
+    {
+      duration: "January 2026 - July 2026",
+      puesto: "Internship",
+      description: "Full-stack developer on the Medical Records project at SALUD in Aragón, Spain"
+    }
+  ];
 
   const proyectos = [
     {
@@ -61,14 +152,65 @@ export default function Home() {
     }
   ];
 
-  const certificados = [
+  const proyectosEnglish = [
     {
-      title: "Cyber Security 101 Certificate",
-      entidad: "TryHackMe"
+      year: "2026",
+      title: "Bachelor’s Thesis",
+      description: "Management, monitoring and alert system for vector-borne disease",
+      tech: ["JavaScript", "Kotlin", "Tailwind", "SQL", "JaCoCo", "NextJS", "Spring Boot", "Procesos ETL", "AWS", "PostgreSQL", "Git", "Github", "Docker"]
     },
+    {
+      year: "2022",
+      title: "Space Invaders",
+      description: "Implementation of the famous Space Invaders game on the LPC2105 processor",
+      tech: ["Ensamblador"]
+    },
+    {
+      year: "2024",
+      title: "Incident Manager",
+      description: "Web application for IT incident management",
+      tech: ["React", ".NET", "SQL Server", "Nginx", "Ollama", "Docker"]
+    },
+    {
+      year: "2024",
+      title: "Narratives",
+      description: "Audiobook app available for both computers and Android devices",
+      tech: ["React", "React Native", "Ionic", "Flutter", "Node.js", "PostgreSQL"]
+    },
+    {
+      year: "2025",
+      title: "Fractal Link",
+      description: "Web application for shortening URLs using hexagonal and clean architecture", 
+      tech: ["Kotlin", "Spring Boot", "RabbitMQ", "Git", "Github"]
+    },
+    {
+      year: "2025",
+      title: "ZaragozaGo",
+      description: "Web application for accessing information on public transport in the city of Zaragoza, Spain",
+      tech: ["React", "JavaScript", "Leaflet", "Express", "MongoDB", "Render", "Git", "Github"]
+    },
+    {
+      year: "2025",
+      title: "Coachito",
+      description: "Android app for tracking gym workouts",
+      tech: ["React Native", "TypeScript", "Expo", "Gluestack", "Jest", "Supabase", "Git", "Github"]
+    },
+    {
+      year: "2026",
+      title: "Space management system",
+      description: "A system for booking and managing spaces in EINA’s Ada Byron building, using Domain-Driven Design (DDD)",
+      tech: ["Java", "TypeScript", "NextJS", "JUnit", "PyGeoAPI", "RabbitMQ", "PostgreSQL", "Github"]
+    }
+  ];
+
+  const certificados = [
     {
       title: "B2 First",
       entidad: "Cambridge English"
+    },
+    {
+      title: "Cyber Security 101 Certificate",
+      entidad: "TryHackMe"
     },
     {
       title: "AWS Academy Graduate - Engineering Operations Technician - Training Badge",
@@ -76,6 +218,25 @@ export default function Home() {
     },
     {
       title: "Certificado de participación en Locked Shields Partners Run 2026",
+      entidad: "NATO Cooperative Cyberdefence Centre of Excellence"
+    }
+  ];
+
+  const certificadosEnglish = [
+    {
+      title: "B2 First",
+      entidad: "Cambridge English"
+    },
+    {
+      title: "Cyber Security 101 Certificate",
+      entidad: "TryHackMe"
+    },
+    {
+      title: "AWS Academy Graduate - Engineering Operations Technician - Training Badge",
+      entidad: "Amazon Web Services"
+    },
+    {
+      title: "Certifacet of participation Locked Shields Partners Run 2026",
       entidad: "NATO Cooperative Cyberdefence Centre of Excellence"
     }
   ];
@@ -137,20 +298,41 @@ export default function Home() {
 
   return (
     <div className="flex flex-col bg-background min-h-screen">
-      <ContactBar />
+      <div className="fixed top-6 ml-2 flex flex-col items-start">
+        <nav>
+          <button>
+            {idioma === 'español' ? (
+              <span 
+                className="px-4 py-2 bg-[#bba591] text-[#0e1c4f] rounded-full font-semibold hover:scale-105 transition-transform"
+                onClick={() => setIdioma('english')}
+              >
+                English
+              </span>
+            ) : (
+              <span 
+                className="px-4 py-2 bg-[#bba591] text-[#0e1c4f] rounded-full font-semibold hover:scale-105 transition-transform"
+                onClick={() => setIdioma('español')}
+              >
+                Español
+              </span>
+            )}
+          </button>
+        </nav>
+      </div>
+      <ContactBar idioma={idioma} />
       <section className="min-h-screen w-full flex flex-col justify-center items-center pt-24 pb-12 px-4 md:px-8">
         <div className="text-[#0e1c4f] flex flex-col items-center mb-16 md:mb-24">
           <div className="font-mono font-bold text-2xl text-center mb-4">
-              ¡Hola! Soy Curro
+              {idioma == 'español' ? '¡Hola! Soy Curro' : 'Hi! I am Curro' }
           </div>
           <div className="font-mono font-bold text-4xl md:text-6xl text-center">
-              Ingeniero de Software
+            {idioma == 'español' ? 'Ingeniero de Software' : 'Software Engineer' }
           </div>
         </div>
           {/* Este div es el que centra TODO el bloque en la pantalla */}
           <div className="w-full max-w-5xl">
             <h2 className="text-3xl font-bold mb-10 text-center font-mono text-[#336659]">
-              Tecnologías
+              {idioma == 'español' ? 'Tecnologías' : 'Technologies' }
             </h2>
             {/* Ahora el carrusel está AQUÍ DENTRO, por lo que respetará el centro de la pantalla */}
             <div className="relative w-full overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
@@ -179,13 +361,14 @@ export default function Home() {
       </section>
       <section className="py-20 w-full px-4 md:px-8">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold mb-20 text-center font-mono text-[#336659]">Experiencia</h2>
+          <h2 className="text-3xl font-bold mb-20 text-center font-mono text-[#336659]">
+            {idioma == 'español' ? 'Experiencia' : 'Experience' }
+          </h2>
           <div className="relative">
             {/* La línea vertical (Centrada en Desktop, a la izquierda en Móvil) */}
             <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-white -translate-x-1/2 rounded"></div>
             <div className="md:hidden absolute left-4 top-0 bottom-0 w-1 bg-white rounded"></div>
-            {/* Iteramos sobre los proyectos */}
-            {experienca.map((exp, index) => (
+            {(idioma == 'español' ? experienca : experiencaEnglish).map((exp, index) => (
               <div 
                 key={index} 
                 className={`relative flex items-center mb-12 w-full ${
@@ -215,13 +398,15 @@ export default function Home() {
       {/* SECCIÓN TIMELINE VERTICAL */}
       <section className="py-20 w-full px-4 md:px-8">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold mb-20 text-center font-mono text-[#336659]">Mis Proyectos</h2>
+          <h2 className="text-3xl font-bold mb-20 text-center font-mono text-[#336659]">
+            {idioma == 'español' ? 'Mis Proyectos' : 'My Projects' }
+          </h2>
           <div className="relative">
             {/* La línea vertical (Centrada en Desktop, a la izquierda en Móvil) */}
             <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-white -translate-x-1/2 rounded"></div>
             <div className="md:hidden absolute left-4 top-0 bottom-0 w-1 bg-[#bba591] rounded"></div>
             {/* Iteramos sobre los proyectos */}
-            {proyectos.sort((a, b) => Number(b.year) - Number(a.year)).map((project, index) => (
+            {(idioma == 'español' ? proyectos : proyectosEnglish).sort((a, b) => Number(b.year) - Number(a.year)).map((project, index) => (
               <div 
                 key={index} 
                 className={`relative flex items-center mb-12 w-full ${
@@ -250,7 +435,9 @@ export default function Home() {
                     </div>
                     {/* 4. CARA TRASERA (Se queda igual) */}
                     <div className="absolute inset-0 w-full h-full backface-hidden [transform:rotateY(180deg)] p-6 border-2 border-[#336659] rounded-xl bg-[#336659] text-background flex flex-col items-center justify-center text-center">
-                      <h4 className="font-bold mb-4 font-mono text-lg">Stack Tecnológico</h4>
+                      <h4 className="font-bold mb-4 font-mono text-lg">
+                        {idioma == 'español' ? 'Stack Tecnológico' : 'Stack'}
+                      </h4>
                       <div className="flex flex-wrap gap-2 justify-center">
                         {project.tech?.map((t, i) => (
                           <span key={i} className="px-3 py-1 bg-background text-[#336659] rounded-full text-xs font-bold shadow">
@@ -271,11 +458,11 @@ export default function Home() {
       <section className="py-20 pb-8 w-full px-4 md:px-8">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold mb-20 text-center font-mono text-[#336659]">
-            Certificados
+            {idioma == 'español' ? 'Certificados' : 'Certificates' }
           </h2>
           {/* Contenedor GRID: Gestiona las columnas automáticamente */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {certificados.map((certificado, index) => (
+            {(idioma == 'español' ? certificados : certificadosEnglish).map((certificado, index) => (
               /* Eliminamos el div extra que tenías y ponemos el key directamente en la tarjeta */
               <div 
                 key={index} 
