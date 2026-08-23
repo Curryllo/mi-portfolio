@@ -298,7 +298,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col bg-background min-h-screen">
-      <div className="fixed top-6 ml-2 flex flex-col items-start">
+      <div className="fixed top-6 ml-2 z-50 flex flex-col items-start">
         <nav>
           <button>
             {idioma === 'español' ? (
