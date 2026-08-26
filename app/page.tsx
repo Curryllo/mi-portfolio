@@ -219,6 +219,10 @@ export default function Home() {
     {
       title: "Certificado de participación en Locked Shields Partners Run 2026",
       entidad: "NATO Cooperative Cyberdefence Centre of Excellence"
+    },
+    {
+      title: "Certificado de finalización de Claude Code in Action",
+      entidad: "Anthropic Academy"
     }
   ];
 
@@ -236,8 +240,12 @@ export default function Home() {
       entidad: "Amazon Web Services"
     },
     {
-      title: "Certifacet of participation Locked Shields Partners Run 2026",
+      title: "Certificate of participation Locked Shields Partners Run 2026",
       entidad: "NATO Cooperative Cyberdefence Centre of Excellence"
+    },
+    {
+      title: "Certificate of completion Claude Code in Action",
+      entidad: "Anthropic Academy"
     }
   ];
 
