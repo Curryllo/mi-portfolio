@@ -104,9 +104,15 @@ export default function Home() {
   const proyectos = [
     {
       year: "2026",
+      title: "Aplicación para el envío de archivos",
+      description: "Aplicación web y app móvil para el envío de fotos y vídeos desde el móvil a mi ordenador personal",
+      tech: ["Next.Js", "Android Compose", "Spring Boot", "Amazon S3", "OpenCode", "Docker"]
+    },
+    {
+      year: "2026",
       title: "Trabajo Fin de Grado",
       description: "Sistema integral de gestión, explotación y alerta sobre enfermedades vectoriales",
-      tech: ["JavaScript", "Kotlin", "Tailwind", "SQL", "JaCoCo", "NextJS", "Spring Boot", "Procesos ETL", "AWS", "PostgreSQL", "Git", "Github", "Docker"]
+      tech: ["JavaScript", "Kotlin", "Tailwind", "SQL", "JaCoCo", "Next.Js", "Spring Boot", "Procesos ETL", "AWS", "PostgreSQL", "Git", "Github", "Docker"]
     },
     {
       year: "2022",
@@ -148,16 +154,22 @@ export default function Home() {
       year: "2026",
       title: "Sistema gestor de espacios",
       description: "Sistema para la reserva y gestión de espacios del edificio Ada Byron de la EINA aplicando Domain Driven Design (DDD)",
-      tech: ["Java", "TypeScript", "NextJS", "JUnit", "PyGeoAPI", "RabbitMQ", "PostgreSQL", "Github"]
+      tech: ["Java", "TypeScript", "Next.Js", "JUnit", "PyGeoAPI", "RabbitMQ", "PostgreSQL", "Github"]
     }
   ];
 
   const proyectosEnglish = [
     {
       year: "2026",
+      title: "File sending application",
+      description: "Web application and mobile app for sending photos and videos from the mobile to my personal computer",
+      tech: ["Next.Js", "Android Compose", "Spring Boot", "Amazon S3", "OpenCode", "Docker"]
+    },
+    {
+      year: "2026",
       title: "Bachelor’s Thesis",
       description: "Management, monitoring and alert system for vector-borne disease",
-      tech: ["JavaScript", "Kotlin", "Tailwind", "SQL", "JaCoCo", "NextJS", "Spring Boot", "Procesos ETL", "AWS", "PostgreSQL", "Git", "Github", "Docker"]
+      tech: ["JavaScript", "Kotlin", "Tailwind", "SQL", "JaCoCo", "Next.Js", "Spring Boot", "Procesos ETL", "AWS", "PostgreSQL", "Git", "Github", "Docker"]
     },
     {
       year: "2022",
@@ -199,7 +211,7 @@ export default function Home() {
       year: "2026",
       title: "Space management system",
       description: "A system for booking and managing spaces in EINA’s Ada Byron building, using Domain-Driven Design (DDD)",
-      tech: ["Java", "TypeScript", "NextJS", "JUnit", "PyGeoAPI", "RabbitMQ", "PostgreSQL", "Github"]
+      tech: ["Java", "TypeScript", "Next.Js", "JUnit", "PyGeoAPI", "RabbitMQ", "PostgreSQL", "Github"]
     }
   ];
 
@@ -334,7 +346,7 @@ export default function Home() {
               {idioma == 'español' ? '¡Hola! Soy Curro' : 'Hi! I am Curro' }
           </div>
           <div className="font-mono font-bold text-4xl md:text-6xl text-center">
-            {idioma == 'español' ? 'Ingeniero de Software' : 'Software Engineer' }
+            {idioma == 'español' ? 'Ingeniero Informático' : 'Computer Engineer' }
           </div>
         </div>
           {/* Este div es el que centra TODO el bloque en la pantalla */}
