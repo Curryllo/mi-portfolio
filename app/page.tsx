@@ -63,7 +63,7 @@ export function ContactBar({ idioma }: { idioma: string }) {
                                 <br/><br/>
                                 Siempre me ha gustado la tecnología y la innovación, es por ello que elegí esta profesión la cual ofrece muchísimas posibilidades.
                                 <br/><br/>
-                                Si quieres contactar conmigo puedes hacerlo a través de mi correo: <strong>currovalero2003@gmail.com</strong> o podemos conectar por LinkedIn.
+                                Si quieres contactar conmigo puedes hacerlo a través de mi correo: <strong>currovalero1903@gmail.com</strong> o podemos conectar por LinkedIn.
                             </>
                         ) : (
                             <>
@@ -71,7 +71,7 @@ export function ContactBar({ idioma }: { idioma: string }) {
                                 <br/><br/>
                                 I have always been passionate about technology and innovation, which is why I chose this profession that offers so many possibilities.
                                 <br/><br/>
-                                If you want to contact me, you can do so through my email: <strong>currovalero2003@gmail.com</strong> or we can connect via LinkedIn.
+                                If you want to contact me, you can do so through my email: <strong>currovalero1903@gmail.com</strong> or we can connect via LinkedIn.
                             </>
                         )}
                     </p>
