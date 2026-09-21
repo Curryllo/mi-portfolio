@@ -235,6 +235,9 @@ export default function Home() {
     {
       title: "Certificado de finalización de Claude Code in Action",
       entidad: "Anthropic Academy"
+    },
+    { title: "Certificado de participación en II Edición Mobility Summit Hackathon Movilidad",
+      entidad: "Ayuntamiento de Zaragoza"
     }
   ];
 
@@ -258,6 +261,9 @@ export default function Home() {
     {
       title: "Certificate of completion Claude Code in Action",
       entidad: "Anthropic Academy"
+    },
+    { title: "Certificate of participation in II Edition Mobility Summit Hackathon Mobility",
+      entidad: "Zaragoza City Council"
     }
   ];
 
