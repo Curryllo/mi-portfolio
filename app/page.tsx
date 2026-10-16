@@ -104,9 +104,15 @@ export default function Home() {
   const proyectos = [
     {
       year: "2026",
+      title: "Aplicación para el conteo de proteínas",
+      description: "App para el conteo de proteínas en alimentos ingeridos en el día a día",
+      tech: ["Kotlin", "Jetpack Compose", "Android Studio", "Git", "Github"]
+    },
+    {
+      year: "2026",
       title: "Aplicación para el envío de archivos",
       description: "Aplicación web y app móvil para el envío de fotos y vídeos desde el móvil a mi ordenador personal",
-      tech: ["Next.Js", "Android Compose", "Spring Boot", "Amazon S3", "OpenCode", "Docker"]
+      tech: ["Next.Js", "Android Compose", "Spring Boot", "Amazon S3", "OpenCode", "Docker", "Git", "Github"]
     },
     {
       year: "2026",
@@ -161,9 +167,15 @@ export default function Home() {
   const proyectosEnglish = [
     {
       year: "2026",
+      title: "Protein counting application",
+      description: "App for counting proteins in foods consumed on a daily basis",
+      tech: ["Kotlin", "Jetpack Compose", "Android Studio", "Git", "Github"]
+    },
+    {
+      year: "2026",
       title: "File sending application",
       description: "Web application and mobile app for sending photos and videos from the mobile to my personal computer",
-      tech: ["Next.Js", "Android Compose", "Spring Boot", "Amazon S3", "OpenCode", "Docker"]
+      tech: ["Next.Js", "Android Compose", "Spring Boot", "Amazon S3", "OpenCode", "Docker", "Git", "Github"]
     },
     {
       year: "2026",
